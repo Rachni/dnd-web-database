@@ -5,7 +5,19 @@ DnD Database (DNDDB) is a PHP-based web application designed to assist players a
 ## Project Goal 🎯
 
 This project was developed with the goal of practicing and improving my skills in **PHP** and, particularly, in implementing **three-tier architecture** (Model, Controller, Service, and Handler). The code structure and design are organized according to this architectural pattern to improve maintainability, scalability, and separation of concerns in the code.
+---
+# Project Status ⚙️
+This project was originally developed as part of a class assignment, and due to tight deadlines, I had to submit it in its current state. While it works as intended, I am currently in the process of refactoring and improving the architecture to make it more robust, maintainable, and scalable.
 
+I plan to enhance the codebase, especially with a focus on improving the separation of concerns and implementing better practices for future extensibility.
+
+#🚧 Work in Progress !
+
+The current architecture works but needs further refinement.
+Refactoring the backend structure to make it more modular and clean.
+Focusing on improving the three-tier architecture, particularly the interactions between Model, Controller, Service, and Handler layers.
+
+---
 ### Three-Tier Architecture 🏗️
 
 The architecture used in this project follows an **extended Model-View-Controller (MVC)** pattern with an additional **Service and Handler layer**, aimed at separating the different responsibilities of the application. Below is a breakdown of each layer:
