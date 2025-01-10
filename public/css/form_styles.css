@@ -1,0 +1,136 @@
+/* Contenedor del formulario */
+.form-container {
+    background-color: #3a3a3a; /* Fondo oscuro */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+    max-width: 500px; /* Limita el ancho del formulario */
+    margin: 80px auto 20px auto; /* Espacio superior */
+    color: #F5F5DC; /* Blanco roto */
+    font-family: 'Cinzel', serif; /* Tipografía elegante */
+    width: 100%;
+    box-sizing: border-box; /* Incluye padding y bordes en el ancho */
+}
+
+/* Labels */
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #F5F5DC; /* Blanco roto */
+}
+
+/* Input, Textarea, and Select styles */
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #4B0082; /* Bordes púrpura */
+    border-radius: 5px;
+    background-color: #2d2d2d; /* Fondo oscuro */
+    color: #F5F5DC; /* Texto claro */
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Incluye padding y bordes */
+}
+
+/* Hover y focus en los campos */
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    outline: none; /* Elimina el borde predeterminado */
+    border-color: #7b42f5; /* Bordes más brillantes al enfocar */
+    box-shadow: 0 0 10px rgba(123, 66, 245, 0.5); /* Sombra púrpura */
+}
+
+/* Custom File Input Styling */
+/* Hide the default file input */
+.form-container input[type="file"] {
+    display: none; /* Hides the native file input */
+}
+
+/* Style the label to act as the file input button */
+.form-container .file-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4B0082; /* Purple background */
+    color: #F5F5DC; /* Light text */
+    font-family: 'Cinzel', serif; /* Matches the form font */
+    font-size: 1rem;
+    border: 1px solid #4B0082;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and focus styles for the label */
+.form-container .file-label:hover {
+    background-color: #7b42f5; /* Brighter purple */
+    box-shadow: 0 0 10px rgba(123, 66, 245, 0.8); /* Glowing effect */
+}
+
+/* Show the selected file name */
+.form-container .file-name {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #F5F5DC; /* Light text */
+    font-family: 'Cinzel', serif; /* Matches the form font */
+}
+
+/* Botón de envío */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4B0082; /* Fondo púrpura */
+    color: #F5F5DC; /* Texto claro */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover en el botón */
+.form-container button:hover {
+    background-color: #7b42f5; /* Púrpura más brillante */
+    box-shadow: 0 0 10px rgba(123, 66, 245, 0.8); /* Sombra brillante */
+}
+
+/* Mensajes de error o éxito */
+.flash-message {
+    background-color: #4B0082; /* Fondo púrpura */
+    color: #F5F5DC; /* Texto claro */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .form-container {
+        margin: 100px auto 10px auto; /* Aumenta el margen superior */
+        padding: 20px; /* Reduce el padding */
+        max-width: 90%; /* Aumenta el ancho relativo */
+    }
+
+    .form-container label {
+        font-size: 0.9rem; /* Reduce el tamaño de las etiquetas */
+    }
+
+    .form-container input,
+    .form-container textarea,
+    .form-container select {
+        font-size: 0.9rem; /* Ajusta el tamaño del texto */
+    }
+
+    .form-container button {
+        font-size: 1rem; /* Reduce ligeramente el tamaño del botón */
+    }
+}

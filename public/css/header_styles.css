@@ -1,0 +1,88 @@
+/* Header container */
+header {
+  width: 100%;
+  background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro translúcido */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-bottom: 1px solid #4B0082; /* Línea decorativa */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+}
+
+/* Navigation menu */
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+}
+
+/* Navigation items */
+nav ul li {
+  margin: 0 10px;
+}
+
+/* Links styling */
+nav ul li a {
+  text-decoration: none;
+  color: #F5F5DC; /* Beige claro */
+  font-size: 16px;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+nav ul li a:hover {
+  color: #7b42f5; /* Púrpura brillante */
+}
+
+/* Welcome message */
+.welcome-message {
+  color: #F5F5DC;
+  font-size: 16px;
+  margin-right: 10px;
+  white-space: nowrap; /* Evita división de texto */
+}
+
+/* Logout button */
+.logout-button {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c9302c;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Coloca los elementos verticalmente */
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .welcome-message {
+    margin-bottom: 10px; /* Separación del resto de los enlaces */
+  }
+
+  header {
+    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+  }
+}

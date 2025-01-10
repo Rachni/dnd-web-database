@@ -1,0 +1,87 @@
+/* Importing the Cinzel font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Global styles */
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo del contenedor principal */
+main {
+    margin-top: 80px; /* Agrega un margen superior igual a la altura del header */
+    padding: 20px; /* Espaciado interno para el contenido */
+    flex-grow: 1;
+    text-align: center;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+
+
+/* Title styles */
+h1 {
+    margin-top: 80px; /* Ajusta este valor según la altura del header */
+    text-align: center;
+    color: #7b42f5; /* Título púrpura */
+    font-size: 2.5rem;
+  }
+
+/* Paragraph text */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Management list styles */
+.management-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en una columna */
+    align-items: center; /* Centra los elementos horizontalmente dentro del contenedor */
+    text-align: center;
+}
+
+/* Management items */
+.management-item {
+    margin: 10px 0;
+}
+
+/* Links */
+.management-item a {
+    text-decoration: none;
+    font-size: 1.5rem; /* Tamaño de letra aumentado */
+    color: #7b42f5; /* Violeta brillante */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect with glow */
+.management-item a:hover {
+    color: #d1b3ff; /* Violeta claro */
+    text-shadow: 0 0 10px #d1b3ff, 0 0 20px #7b42f5; /* Efecto de brillo */
+}
+
+/* Footer styles */
+footer {
+    background-color: #1e1e1e; /* Fondo ligeramente más claro que el fondo principal */
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #7b42f5;
+}
+
+/* Responsive design */
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    main {
+        margin-top: 100px; /* Aumenta el margen superior en pantallas pequeñas */
+    }
+}

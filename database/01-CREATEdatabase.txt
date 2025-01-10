@@ -1,0 +1,76 @@
+-- Elimina la base de datos si ya existe
+DROP DATABASE IF EXISTS dnd_db;
+
+-- Crea la base de datos
+CREATE DATABASE dnd_db;
+
+-- Usa la base de datos
+USE dnd_db;
+
+-- Crear tabla de Usuarios
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    role ENUM('admin', 'player') DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Crear tabla de Campañas
+CREATE TABLE campaigns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    start_date DATE NOT NULL,
+    end_date DATE,
+    status ENUM('active', 'completed', 'paused') NOT NULL
+);
+
+-- Crear tabla de Usuarios en Campañas (relación muchos a muchos entre usuarios y campañas)
+CREATE TABLE users_campaigns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    campaign_id INT NOT NULL,
+    role ENUM('admin', 'player') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (campaign_id) REFERENCES campaigns(id) ON DELETE CASCADE
+);
+
+-- Crear tabla de Personajes
+CREATE TABLE characters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    campaign_id INT,
+    name VARCHAR(255) NOT NULL,
+    race VARCHAR(255) NOT NULL,
+    class VARCHAR(255) NOT NULL,
+    level INT DEFAULT 1,
+    experience INT DEFAULT 0,
+    health INT DEFAULT 100,
+    image_path VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (campaign_id) REFERENCES campaigns(id) ON DELETE SET NULL
+);
+
+-- Crear tabla de Hechizos
+CREATE TABLE spells (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    level INT NOT NULL,
+    type VARCHAR(255) NOT NULL
+);
+
+-- Crear tabla de Hechizos de Personajes (relación muchos a muchos entre personajes y hechizos)
+CREATE TABLE character_spells (
+    character_id INT,
+    spell_id INT,
+    casting_level INT DEFAULT 1,
+    PRIMARY KEY (character_id, spell_id),
+    FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+    FOREIGN KEY (spell_id) REFERENCES spells(id) ON DELETE CASCADE
+);
+
+

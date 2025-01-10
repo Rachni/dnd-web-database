@@ -1,0 +1,8 @@
+-- Crear un nuevo usuario
+CREATE USER 'admin'@'%' IDENTIFIED BY 'dndquebueno';
+
+-- Otorgar permisos completos sobre la base de datos dnd_db
+GRANT ALL PRIVILEGES ON dnd_db.* TO 'admin'@'%';
+
+-- Aplicar los cambios
+FLUSH PRIVILEGES;

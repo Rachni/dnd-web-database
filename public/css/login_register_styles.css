@@ -1,0 +1,322 @@
+/* Importando la fuente Cinzel desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cinzel", serif;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  position: relative;
+  perspective: 1000px;
+  width: 300px; /* Ajusta el contenedor al ancho del formulario */
+}
+
+/* Botón flotante centrado */
+#toggle-btn {
+  position: absolute;
+  top: -40px;
+  left: 55%;
+  transform: translate(-50%, 0);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+#toggle-btn img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #5543ca;
+  transition: transform 0.3s ease;
+}
+
+#toggle-btn img:hover {
+  transform: scale(1.1);
+}
+
+.form-card {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Coloca los elementos en columna */
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    position: relative;
+    background-color: #2d2d2d;
+    border-radius: 15px;
+  }
+  
+  .form-card-front,
+  .form-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Coloca los elementos en columna */
+    background-color: #2d2d2d;
+    border-radius: 15px;
+    padding: 20px;
+    gap: 15px; /* Espaciado uniforme entre inputs y botones */
+  }
+
+h2 {
+  color: #f5f5dc;
+}
+
+.input-field {
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: 2px solid #5543ca;
+  background-color: #3a3a3a;
+  color: #f5f5dc;
+  font-size: 14px;
+}
+
+.input-field:focus {
+  border-color: #f4524d;
+  outline: none;
+}
+
+.submit-btn {
+  background: linear-gradient(125deg, #a72879, #064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  width: 80%;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Efecto 3D para girar */
+.flip {
+  transform: rotateY(180deg);
+}
+
+/* Video de fondo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Para que el video quede detrás de los demás elementos */
+}
+
+/* Estilo del formulario */
+.get-in-touch {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  padding: 40px;
+  background-color: #2d2d2d;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  line-height: 48px;
+  padding-bottom: 30px;
+  color: #5543ca;
+  background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Estilos para el formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 16px 0;
+}
+
+.contact-form label {
+  font-size: 18px;
+  color: #f5f5dc;
+}
+
+.contact-form .input-text,
+.contact-form select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-width: 0 0 2px 0;
+  border-color: #5543ca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  background-color: #3a3a3a;
+  color: #f5f5dc;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+.contact-form .input-text:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: #f4524d;
+}
+
+.contact-form .label {
+  position: absolute;
+  left: 10px;
+  bottom: 11px;
+  font-size: 18px;
+  color: #5543ca;
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Estilo del botón de envío */
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+  background-image: linear-gradient(125deg, #a72879, #064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contact-form .submit-btn:hover {
+  background-color: #500a6e;
+}
+
+/* Contenedor de los botones de música */
+.music-buttons-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2; /* Para estar por encima del video */
+}
+
+/* Botones de música */
+.music-buttons-container button {
+  background: linear-gradient(125deg, #a72879, #064497);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 120px;
+  text-align: center;
+}
+
+.music-buttons-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Controles de audio */
+.audio-controls {
+  position: fixed; /* Cambia de absolute a fixed */
+  bottom: 20px; /* Baja los controles cerca del fondo */
+  left: 50%; /* Centra los controles horizontalmente */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 1; /* Mantén los controles visibles encima del video */
+}
+
+/* Estilo de los botones de la barra de audio */
+.audio-controls button,
+.audio-controls input[type="range"] {
+  background: linear-gradient(125deg, #a72879, #064497);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 4px;
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.audio-controls button:hover {
+  background-color: #5543ca;
+  transform: scale(1.05);
+}
+
+.audio-controls input[type="range"] {
+  appearance: none;
+  width: 100px;
+  height: 2px;
+  background: #2d2d2d;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.audio-controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #5543ca;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.audio-controls input[type="range"]::-webkit-slider-thumb:hover {
+  background: #f4524d;
+}
+
+.flash-message {
+  background-color: #4b0082; /* Fondo púrpura */
+  color: #f5f5dc; /* Texto claro */
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
